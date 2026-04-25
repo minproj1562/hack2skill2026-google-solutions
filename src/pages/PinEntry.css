@@ -1,0 +1,100 @@
+.pin-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--safety-bg);
+  color: var(--safety-text);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.pin-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.lock-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--safety-accent);
+  margin-bottom: 1rem;
+}
+
+.pin-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.pin-header p {
+  color: #a1a1aa;
+  font-size: 0.9rem;
+}
+
+.pin-dots {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.pin-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #52525b;
+  transition: all 0.2s ease;
+}
+
+.pin-dot.filled {
+  background-color: var(--safety-text);
+  border-color: var(--safety-text);
+}
+
+.numpad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.num-btn {
+  background: none;
+  border: none;
+  color: var(--safety-text);
+  font-size: 1.75rem;
+  font-weight: 500;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.num-btn:active {
+  background-color: var(--safety-secondary);
+}
+
+.icon-btn {
+  color: #a1a1aa;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.error-shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+.error-shake .pin-dot {
+  border-color: var(--safety-primary);
+  background-color: var(--safety-primary);
+}
